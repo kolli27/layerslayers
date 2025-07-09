@@ -1,0 +1,10 @@
+{
+  "/page": "app/page.js",
+  "/admin/login/page": "app/admin/login/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/api/bookings/route": "app/api/bookings/route.js",
+  "/admin/bookings/page": "app/admin/bookings/page.js",
+  "/admin/availability/page": "app/admin/availability/page.js",
+  "/api/availability/route": "app/api/availability/route.js",
+  "/admin/content/page": "app/admin/content/page.js"
+}
