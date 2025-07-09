@@ -4,8 +4,35 @@ import { useState, useEffect } from 'react'
 import AdminLayout from '@/components/admin/AdminLayout'
 import { Save, Edit, Image, Type, Settings, Eye, EyeOff } from 'lucide-react'
 
+interface ContentState {
+  hero: {
+    title: string
+    subtitle: string
+    description: string
+  }
+  about: {
+    title: string
+    description: string
+    experience: string
+  }
+  services: {
+    id: string
+    title: string
+    description: string
+    price: string
+    duration: string
+    features: string[]
+  }[]
+  contact: {
+    address: string
+    phone: string
+    email: string
+    hours: { day: string; time: string }[]
+  }
+}
+
 export default function AdminContent() {
-  const [content, setContent] = useState({
+  const [content, setContent] = useState<ContentState>({
     hero: {
       title: 'Erschaffe deine eigene Keramik-Kunst',
       subtitle: 'In unserem gemütlichen Atelier in Köln kannst du deine Kreativität entfalten.',
@@ -73,7 +100,7 @@ export default function AdminContent() {
     { id: 'contact', name: 'Kontakt', icon: Settings }
   ]
 
-  const updateContent = (section: string, updates: any) => {
+  const updateContent = (section: keyof ContentState, updates: any) => {
     setContent(prev => ({
       ...prev,
       [section]: { ...prev[section], ...updates }

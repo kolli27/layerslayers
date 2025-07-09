@@ -1,40 +1,73 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/_not-found": [
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/app/_not-found-56cb709f2a1392e2.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
-    "/admin/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/login/page.js"
-    ],
-    "/admin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/page.js"
-    ],
-    "/admin/bookings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/bookings/page.js"
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/646-cd64fc6f836f2718.js",
+      "static/chunks/479-eb40986f489a9dbd.js",
+      "static/css/f14f1e1e0ccd5a28.css",
+      "static/chunks/app/layout-e1ffa0f77d8cf8df.js"
     ],
     "/admin/availability/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/availability/page.js"
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/646-cd64fc6f836f2718.js",
+      "static/chunks/app/admin/availability/page-3b4c3d6845036c72.js"
+    ],
+    "/admin/bookings/page": [
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/app/admin/bookings/page-6aa83bdfb975d641.js"
     ],
     "/admin/content/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/content/page.js"
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/app/admin/content/page-dc4a2adeb35d2e22.js"
+    ],
+    "/admin/login/page": [
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/app/admin/login/page-359e87cefc40e8f7.js"
+    ],
+    "/admin/page": [
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/app/admin/page-82e5452de9fe3a32.js"
+    ],
+    "/admin/settings/page": [
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/app/admin/settings/page-bc22717748d88a79.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-d0ba4a13464bb7dd.js",
+      "static/chunks/fd9d1056-36bfbfa023b14e9a.js",
+      "static/chunks/472-7c1c9b598ff21f3e.js",
+      "static/chunks/main-app-377f224e76b1b306.js",
+      "static/chunks/646-cd64fc6f836f2718.js",
+      "static/chunks/479-eb40986f489a9dbd.js",
+      "static/chunks/app/page-1688df4f63136443.js"
     ]
   }
 }

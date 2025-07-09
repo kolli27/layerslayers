@@ -1,10 +1,12 @@
 {
-  "/page": "app/page.js",
+  "/_not-found": "app/_not-found.js",
+  "/admin/availability/page": "app/admin/availability/page.js",
+  "/admin/bookings/page": "app/admin/bookings/page.js",
+  "/admin/content/page": "app/admin/content/page.js",
   "/admin/login/page": "app/admin/login/page.js",
   "/admin/page": "app/admin/page.js",
-  "/api/bookings/route": "app/api/bookings/route.js",
-  "/admin/bookings/page": "app/admin/bookings/page.js",
-  "/admin/availability/page": "app/admin/availability/page.js",
+  "/admin/settings/page": "app/admin/settings/page.js",
   "/api/availability/route": "app/api/availability/route.js",
-  "/admin/content/page": "app/admin/content/page.js"
+  "/api/bookings/route": "app/api/bookings/route.js",
+  "/page": "app/page.js"
 }

@@ -3,10 +3,11 @@
 import { useState, useEffect } from 'react'
 import AdminLayout from '@/components/admin/AdminLayout'
 import { Search, Filter, Check, X, Mail, Phone, Calendar, Clock, Users, MoreHorizontal } from 'lucide-react'
+import { Booking } from '@/types'
 
 export default function AdminBookings() {
-  const [bookings, setBookings] = useState([])
-  const [filteredBookings, setFilteredBookings] = useState([])
+  const [bookings, setBookings] = useState<Booking[]>([])
+  const [filteredBookings, setFilteredBookings] = useState<Booking[]>([])
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
   const [loading, setLoading] = useState(true)
@@ -36,7 +37,7 @@ export default function AdminBookings() {
 
     // Filter by search term
     if (searchTerm) {
-      filtered = filtered.filter((booking: any) =>
+      filtered = filtered.filter((booking: Booking) =>
         booking.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         booking.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
         booking.phone.includes(searchTerm)
@@ -45,11 +46,11 @@ export default function AdminBookings() {
 
     // Filter by status
     if (statusFilter !== 'all') {
-      filtered = filtered.filter((booking: any) => booking.status === statusFilter)
+      filtered = filtered.filter((booking: Booking) => booking.status === statusFilter)
     }
 
     // Sort by date and time
-    filtered.sort((a: any, b: any) => {
+    filtered.sort((a: Booking, b: Booking) => {
       const dateA = new Date(`${a.date}T${a.time}`)
       const dateB = new Date(`${b.date}T${b.time}`)
       return dateB.getTime() - dateA.getTime()
@@ -58,10 +59,10 @@ export default function AdminBookings() {
     setFilteredBookings(filtered)
   }
 
-  const updateBookingStatus = async (bookingId: string, newStatus: string) => {
+  const updateBookingStatus = async (bookingId: string, newStatus: 'pending' | 'confirmed' | 'cancelled') => {
     try {
       // In a real app, this would be an API call
-      const updatedBookings = bookings.map((booking: any) =>
+      const updatedBookings = bookings.map((booking: Booking) =>
         booking.id === bookingId ? { ...booking, status: newStatus } : booking
       )
       setBookings(updatedBookings)

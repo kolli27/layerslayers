@@ -5,12 +5,13 @@ import AdminLayout from '@/components/admin/AdminLayout'
 import { Plus, Edit, Trash2, Calendar, Clock, Users, Save, X } from 'lucide-react'
 import { format, addDays, startOfWeek } from 'date-fns'
 import { de } from 'date-fns/locale'
+import { AvailableDate, TimeSlot } from '@/types'
 
 export default function AdminAvailability() {
-  const [availability, setAvailability] = useState([])
+  const [availability, setAvailability] = useState<AvailableDate[]>([])
   const [selectedDate, setSelectedDate] = useState(format(new Date(), 'yyyy-MM-dd'))
   const [isEditing, setIsEditing] = useState(false)
-  const [editingSlot, setEditingSlot] = useState(null)
+  const [editingSlot, setEditingSlot] = useState<{ date: string; slot: TimeSlot } | null>(null)
 
   useEffect(() => {
     fetchAvailability()
@@ -43,13 +44,13 @@ export default function AdminAvailability() {
     return Array.from({ length: 7 }, (_, i) => addDays(startDate, i))
   }
 
-  const getAvailabilityForDate = (date: string) => {
-    const dateData = availability.find((d: any) => d.date === date)
+  const getAvailabilityForDate = (date: string): TimeSlot[] => {
+    const dateData = availability.find((d: AvailableDate) => d.date === date)
     return dateData ? dateData.timeSlots : []
   }
 
   const addTimeSlot = async (date: string, time: string) => {
-    const newSlot = {
+    const newSlot: TimeSlot = {
       id: `${date}-${time}`,
       time,
       available: true,
@@ -58,7 +59,7 @@ export default function AdminAvailability() {
     }
 
     // In a real app, this would be an API call
-    const updatedAvailability = availability.map((d: any) => {
+    let updatedAvailability = availability.map((d: AvailableDate) => {
       if (d.date === date) {
         return {
           ...d,
@@ -69,7 +70,7 @@ export default function AdminAvailability() {
     })
 
     // If date doesn't exist, create it
-    if (!availability.find((d: any) => d.date === date)) {
+    if (!availability.find((d: AvailableDate) => d.date === date)) {
       updatedAvailability.push({
         date,
         timeSlots: [newSlot]
@@ -80,11 +81,11 @@ export default function AdminAvailability() {
   }
 
   const removeTimeSlot = async (date: string, slotId: string) => {
-    const updatedAvailability = availability.map((d: any) => {
+    const updatedAvailability = availability.map((d: AvailableDate) => {
       if (d.date === date) {
         return {
           ...d,
-          timeSlots: d.timeSlots.filter((slot: any) => slot.id !== slotId)
+          timeSlots: d.timeSlots.filter((slot: TimeSlot) => slot.id !== slotId)
         }
       }
       return d
@@ -93,12 +94,12 @@ export default function AdminAvailability() {
     setAvailability(updatedAvailability)
   }
 
-  const updateTimeSlot = async (date: string, slotId: string, updates: any) => {
-    const updatedAvailability = availability.map((d: any) => {
+  const updateTimeSlot = async (date: string, slotId: string, updates: Partial<TimeSlot>) => {
+    const updatedAvailability = availability.map((d: AvailableDate) => {
       if (d.date === date) {
         return {
           ...d,
-          timeSlots: d.timeSlots.map((slot: any) => 
+          timeSlots: d.timeSlots.map((slot: TimeSlot) => 
             slot.id === slotId ? { ...slot, ...updates } : slot
           )
         }
@@ -118,7 +119,7 @@ export default function AdminAvailability() {
       const existingSlots = getAvailabilityForDate(dateStr)
       
       defaultTimes.forEach(time => {
-        const slotExists = existingSlots.find((slot: any) => slot.time === time)
+        const slotExists = existingSlots.find((slot: TimeSlot) => slot.time === time)
         if (!slotExists) {
           addTimeSlot(dateStr, time)
         }
@@ -183,7 +184,7 @@ export default function AdminAvailability() {
                     {getWeekDays().map(day => {
                       const dateStr = format(day, 'yyyy-MM-dd')
                       const daySlots = getAvailabilityForDate(dateStr)
-                      const slot = daySlots.find((s: any) => s.time === time)
+                      const slot = daySlots.find((s: TimeSlot) => s.time === time)
                       
                       return (
                         <td key={`${dateStr}-${time}`} className="px-6 py-4 whitespace-nowrap">

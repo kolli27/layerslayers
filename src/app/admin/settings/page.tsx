@@ -4,8 +4,35 @@ import { useState } from 'react'
 import AdminLayout from '@/components/admin/AdminLayout'
 import { Save, Key, Bell, Globe, Shield, Database, Mail } from 'lucide-react'
 
+interface SettingsState {
+  general: {
+    siteName: string
+    timeZone: string
+    defaultLanguage: string
+    bookingWindow: number
+  }
+  booking: {
+    requireConfirmation: boolean
+    allowCancellation: boolean
+    cancellationDeadline: number
+    maxParticipants: number
+    bufferTime: number
+  }
+  notifications: {
+    emailBookings: boolean
+    smsBookings: boolean
+    emailCancellations: boolean
+    dailyReport: boolean
+  }
+  security: {
+    sessionTimeout: number
+    requirePasswordChange: boolean
+    twoFactorAuth: boolean
+  }
+}
+
 export default function AdminSettings() {
-  const [settings, setSettings] = useState({
+  const [settings, setSettings] = useState<SettingsState>({
     general: {
       siteName: 'LAYERS - Keramik Atelier',
       timeZone: 'Europe/Berlin',
@@ -43,7 +70,7 @@ export default function AdminSettings() {
     { id: 'security', name: 'Sicherheit', icon: Shield }
   ]
 
-  const updateSetting = (section: string, key: string, value: any) => {
+  const updateSetting = (section: keyof SettingsState, key: string, value: any) => {
     setSettings(prev => ({
       ...prev,
       [section]: {
