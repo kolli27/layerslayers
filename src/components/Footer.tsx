@@ -1,11 +1,6 @@
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react'
 
 const Footer = () => {
-  const openingHours = [
-    { day: 'Montag - Freitag', time: '14:00 - 21:00' },
-    { day: 'Samstag', time: '10:00 - 18:00' },
-    { day: 'Sonntag', time: '12:00 - 18:00' }
-  ]
 
   return (
     <footer id="contact" className="bg-ceramic-brown text-white">
@@ -34,31 +29,37 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={20} className="text-ceramic-terracotta mt-1" />
                 <div>
-                  <p>Musterstraße 123</p>
-                  <p>50667 Köln</p>
+                  <p>Eigelstein 133</p>
+                  <p>50668 Köln</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone size={20} className="text-ceramic-terracotta" />
-                <p>0221 12345678</p>
+                <Mail size={20} className="text-ceramic-terracotta" />
+                <p>hallo@layers.cologne</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail size={20} className="text-ceramic-terracotta" />
-                <p>hello@layers.cologne</p>
+                <Clock size={20} className="text-ceramic-terracotta" />
+                <p>Nur mit Terminvereinbarung</p>
               </div>
             </div>
           </div>
 
-          {/* Opening Hours */}
+          {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Öffnungszeiten</h4>
+            <h4 className="text-lg font-semibold mb-4">Services</h4>
             <div className="space-y-2">
-              {openingHours.map((schedule, index) => (
-                <div key={index} className="flex justify-between">
-                  <span className="text-ceramic-cream">{schedule.day}</span>
-                  <span>{schedule.time}</span>
-                </div>
-              ))}
+              <a href="/gruppenevent" className="block text-ceramic-cream hover:text-white transition-colors">
+                Gruppenevents
+              </a>
+              <a href="/geburtstag" className="block text-ceramic-cream hover:text-white transition-colors">
+                Geburtstage
+              </a>
+              <a href="/teamevent" className="block text-ceramic-cream hover:text-white transition-colors">
+                Teamevents
+              </a>
+              <a href="/reservierung" className="block text-ceramic-cream hover:text-white transition-colors">
+                Reservierung
+              </a>
             </div>
           </div>
 
@@ -66,19 +67,22 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Links</h4>
             <div className="space-y-2">
-              <a href="#services" className="block text-ceramic-cream hover:text-white transition-colors">
-                Services
-              </a>
-              <a href="#about" className="block text-ceramic-cream hover:text-white transition-colors">
+              <a href="/über-uns" className="block text-ceramic-cream hover:text-white transition-colors">
                 Über uns
               </a>
-              <a href="#booking" className="block text-ceramic-cream hover:text-white transition-colors">
-                Buchen
+              <a href="/sortiment-und-preise" className="block text-ceramic-cream hover:text-white transition-colors">
+                Preise
               </a>
-              <a href="#" className="block text-ceramic-cream hover:text-white transition-colors">
-                AGB
+              <a href="/faq" className="block text-ceramic-cream hover:text-white transition-colors">
+                FAQ
               </a>
-              <a href="#" className="block text-ceramic-cream hover:text-white transition-colors">
+              <a href="/kontakt" className="block text-ceramic-cream hover:text-white transition-colors">
+                Kontakt
+              </a>
+              <a href="/impressum" className="block text-ceramic-cream hover:text-white transition-colors">
+                Impressum
+              </a>
+              <a href="/datenschutz" className="block text-ceramic-cream hover:text-white transition-colors">
                 Datenschutz
               </a>
             </div>

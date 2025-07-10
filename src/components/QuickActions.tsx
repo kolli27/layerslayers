@@ -4,21 +4,21 @@ const QuickActions = () => {
   const actions = [
     {
       icon: <Gift className="w-8 h-8" />,
-      title: "Gutscheine",
-      description: "Das perfekte Geschenk für kreative Menschen",
-      href: "#gutscheine"
+      title: "Events buchen",
+      description: "Gruppen, Geburtstage & Teamevents",
+      href: "/gruppenevent"
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Sortiment & Preise",
       description: "Entdecke alle verfügbaren Keramikstücke",
-      href: "https://layers.picflow.com/0pk0h9yygz"
+      href: "/sortiment-und-preise"
     },
     {
       icon: <Clock className="w-8 h-8" />,
-      title: "Abholzeiten",
-      description: "Wann ist deine Keramik fertig gebrannt?",
-      href: "#abholzeiten"
+      title: "FAQ",
+      description: "Häufig gestellte Fragen & Antworten",
+      href: "/faq"
     }
   ]
 

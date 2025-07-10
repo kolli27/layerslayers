@@ -11,12 +11,15 @@ const CTA = () => {
           Buche jetzt deinen Platz und entdecke die entspannende Welt des Keramikbemalens
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-white text-primary hover:bg-background-light font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 hover:shadow-medium inline-flex items-center justify-center space-x-2">
+          <a
+            href="/reservierung"
+            className="bg-white text-primary hover:bg-background-light font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 hover:shadow-medium inline-flex items-center justify-center space-x-2"
+          >
             <span>Jetzt buchen</span>
             <ArrowRight size={20} />
-          </button>
+          </a>
           <a
-            href="#kontakt"
+            href="/kontakt"
             className="border-2 border-white hover:bg-white hover:text-primary text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-300 inline-flex items-center justify-center"
           >
             Fragen? Kontaktiere uns

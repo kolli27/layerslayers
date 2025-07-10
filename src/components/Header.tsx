@@ -7,11 +7,17 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Über uns', href: '#about' },
-    { name: 'Buchen', href: '#booking' },
-    { name: 'Kontakt', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Über uns', href: '/über-uns' },
+    { name: 'Preise', href: '/sortiment-und-preise' },
+    { name: 'Events', href: '/gruppenevent', submenu: [
+      { name: 'Gruppenevents', href: '/gruppenevent' },
+      { name: 'Geburtstage', href: '/geburtstag' },
+      { name: 'Teamevents', href: '/teamevent' },
+    ]},
+    { name: 'Buchen', href: '/reservierung' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Kontakt', href: '/kontakt' },
   ]
 
   return (
