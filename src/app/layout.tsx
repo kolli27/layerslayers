@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import FloatingBookingWidget from '@/components/FloatingBookingWidget'
+import { ContentProvider } from '@/lib/contentContext'
 
 export const metadata: Metadata = {
   title: 'LAYERS - Keramik Atelier Köln',
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className="font-sans antialiased">
-        {children}
-        <FloatingBookingWidget />
+        <ContentProvider>
+          {children}
+          <FloatingBookingWidget />
+        </ContentProvider>
       </body>
     </html>
   )
